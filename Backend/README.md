@@ -57,3 +57,44 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Backend Setup
+
+1. Clone the repository and install dependencies:
+```bash
+composer install
+```
+
+2. Copy the environment file:
+```bash
+cp .env.example .env
+```
+
+3. Generate application key (REQUIRED):
+```bash
+php artisan key:generate
+```
+
+4. Configure the database in .env:
+```bash
+envDB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
+
+FRONTEND_URL=http://localhost:3000
+APP_URL=http://localhost:8000
+```bash
+
+5. Create the SQLite database file:
+```bash
+touch database/database.sqlite
+```
+
+6. Run migrations:
+```bash
+php artisan migrate
+```
+
+7. Start the Laravel server:
+```bash
+php artisan serve
+```
